@@ -1,27 +1,29 @@
-#!/usr/bin/env python3
-########################################################################
-# Filename    : ButtonLED.py
-# Description : Control led with button.
-# Author      : www.freenove.com
-# modification: 2023/05/11
-########################################################################
-from gpiozero import LED, Button
+import RPi.GPIO as GPIO 
 
-led = LED(17)       # define LED pin according to BCM Numbering
-button = Button(18) # define Button pin according to BCM Numbering
+ledPin = 11 #define ledPin
+buttonPin = 12 #define buttonPin 
+
+def setup():
+    GPIO.setmode(GPIO.BOARD) 
+    GPIO.setup(ledPin, GPIO.OUT)
+    GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP) 
 
 def loop():
     while True:
-        if button.is_pressed:  # if button is pressed
-            led.on()        # turn on led
-            print("Button is pressed, led turned on >>>") # print information on terminal 
-        else : # if button is relessed
-            led.off() # turn off led 
-            print("Button is released, led turned off <<<")    
+        if GPIO.input(buttonPin) == GPIO.LOW:
+            GPIO.output(ledPin,GPIO.HIGH)
+            print('led turned on >>>') 
+        else:
+            GPIO.output(ledPin,GPIO.LOW)
+            print('led turned off <<<')
 
-if __name__ == '__main__':     # Program entrance
-    print ('Program is starting...')
+def destroy():
+    GPIO.cleanup() 
+
+if __name__=='__main__':
+    print('Program is starting...')
+    setup()
     try:
         loop()
-    except KeyboardInterrupt:  # Press ctrl-c to end the program.
-        print("Ending program")
+    except KeyboardInterrupt:
+        destroy()
