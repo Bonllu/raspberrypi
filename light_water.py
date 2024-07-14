@@ -20,7 +20,7 @@ def loop():
         GPIO.output(pin, GPIO.HIGH) 
 
 def destroy():
-  GPIO.cleanup()
+    GPIO.cleanup()
 
 if __name__ == '__main__': 
     print('Program starting..') 
