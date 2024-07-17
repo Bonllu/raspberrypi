@@ -14,7 +14,7 @@ def loop():
             GPIO.output(pin, GPIO.LOW)
             time.sleep(0.1)
             GPIO.output(pin, GPIO.HIGH)
-        for pin in ledPins[::-1]
+        for pin in ledPins[::-1]:
             GPIO output(pin, GPIO.LOW)
             time.sleep(0.1)
             GPIO.output(pin, GPIO.HIGH) 
