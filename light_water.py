@@ -4,7 +4,7 @@ import time
 ledPins = [11, 12, 13, 15, 16, 18, 22, 3, 5, 24] 
 
 def setup():
-    GPIO.setmode(GHPIO.BOARD)
+    GPIO.setmode(GPIO.BOARD)
     GPIO.setup(ledPins, GPIO.OUT)
     GPIO.output(ledPins, GPIO.HIHG)
 
