@@ -16,7 +16,7 @@ def setup():
     pwmGrenn.start(0) 
     pwmBlue.start(0) 
 
-def seColor(r_val, g_val, v_val):
+def setColor(r_val, g_val, b_val):
     pwmRed.ChangeDutyCycle(r_val)
     pwmGreen.ChangeDutyCycle(g_val)
     pwmBlue.ChangeDutyCycle(b_val) 
