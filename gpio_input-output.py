@@ -13,9 +13,9 @@ try:
     while True:
         readVal = GPIO.input(inPin)
         if readVal == 1:
-            GPIO.output(outPin, 1) 
+            GPIO.output(outPin, 0) 
         if readVal == 0: 
-            GPIO.output(outPin, 0)
+            GPIO.output(outPin, 1)
 
 except KeyboardInterrupt:
     GPIO.cleanup()
