@@ -15,7 +15,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(b1, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(b2, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(LEDPin , GPIO.OUT)
-myPWW = GPIO.PWM(lEDPin, 100)
+myPWM= GPIO.PWM(lEDPin, 100)
 myPWM.start(DC)
 BP = 10
 try:
