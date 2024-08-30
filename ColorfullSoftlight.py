@@ -27,9 +27,9 @@ def setup():
 
 def loop():
     while True:
-        value_Red = adc.analogRead(0)
-        value_Green = adc.analogRead(1)
-        value_Blue = adc.analogRead(2) 
+        value_Red = 255-adc.analogRead(0)
+        value_Green = 255-adc.analogRead(1)
+        value_Blue = 255-adc.analogRead(2) 
         p_Red.ChangeDutyCycle(value_Red*100/255)
         p_Green.ChangeDutyCycle(value_Green*100/255)
         p_Blue.ChangeDutyCycle(value_Blue*100/255)
