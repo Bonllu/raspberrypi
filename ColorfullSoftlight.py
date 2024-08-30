@@ -9,7 +9,7 @@ adc = ADCDevice()
 
 def setup(): 
     global adc 
-    if(adc.detectIDC(0x4b)):
+    if(adc.detectI2C(0x4b)):
         adc = ADS7830()
 
     global p_Red, p_Green, p_Blue
